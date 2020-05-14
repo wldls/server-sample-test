@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import detectPort from "detect-port";
 import chalk from "chalk";
+import cors from "cors";
 
 // api
 import docs from "./utils/api-doc";
@@ -26,6 +27,7 @@ configServer();
 
 // server setting
 const app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
